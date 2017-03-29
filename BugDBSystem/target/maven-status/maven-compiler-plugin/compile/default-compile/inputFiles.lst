@@ -1,0 +1,10 @@
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/BugDBSysApp.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/security/SecurityConfig.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/VO/ErroInfo.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/VO/UserVO.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/domain/User.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/service/UserService.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/controller/BugDBController.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/domain/CurrentUser.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/service/CurrentUserDetailsService.java
+/Users/jingwei/workspace/BugDBSystem/src/main/java/BugDB/BugDBSystem/repository/UserRepository.java

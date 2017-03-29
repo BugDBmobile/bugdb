@@ -1,0 +1,5 @@
+127.0.0.1 - - [29/Mar/2017:20:54:09 +0800] "GET /user?userName=guoyan&password=1234567 HTTP/1.1" 200 54
+127.0.0.1 - - [29/Mar/2017:20:54:09 +0800] "GET /favicon.ico HTTP/1.1" 200 946
+127.0.0.1 - - [29/Mar/2017:20:54:15 +0800] "GET /user?userName=guoyan&password=123456 HTTP/1.1" 200 114
+127.0.0.1 - - [29/Mar/2017:20:54:25 +0800] "GET /user?userName=Leah&password=123456 HTTP/1.1" 200 109
+127.0.0.1 - - [29/Mar/2017:20:56:14 +0800] "GET /user?userName=Leah&password=123456 HTTP/1.1" 200 109
