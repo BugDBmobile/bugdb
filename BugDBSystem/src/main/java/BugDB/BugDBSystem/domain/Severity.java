@@ -8,17 +8,17 @@ import javax.persistence.Id;
 public class Severity implements Serializable {
 	@Id
 	private Integer id;
-	private String descripiton;
+	private String description;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDescripiton() {
-		return descripiton;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescripiton(String descripiton) {
-		this.descripiton = descripiton;
+	public void setDescription(String descripiton) {
+		this.description = descripiton;
 	}
 }

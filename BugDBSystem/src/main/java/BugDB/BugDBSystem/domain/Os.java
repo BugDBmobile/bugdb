@@ -15,10 +15,10 @@ public class Os implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDescripiton() {
+	public String getDescription() {
 		return descripiton;
 	}
-	public void setDescripiton(String descripiton) {
+	public void setDescription(String descripiton) {
 		this.descripiton = descripiton;
 	}
 	

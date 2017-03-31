@@ -26,7 +26,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.google.gson.Gson;
 
 import BugDB.BugDBSystem.VO.ErroInfo;
-import BugDB.BugDBSystem.domain.User;
+import BugDB.BugDBSystem.domain.*;
+import BugDB.BugDBSystem.service.OsService;
 import BugDB.BugDBSystem.service.UserService;
 
 @Controller
@@ -35,6 +36,8 @@ public class BugDBController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private OsService osService;
 	//账号安全问题需要解决
 	@RequestMapping(value ="user",params = {"userName","password"}, method = RequestMethod.GET)
 	@Transactional(readOnly = true)
@@ -75,8 +78,12 @@ public class BugDBController {
 		return new ModelAndView("login");
 	}
 	
-
-
-	
+//	@RequestMapping(value ="os", method = RequestMethod.GET)
+//	@Transactional(readOnly = true)
+//	public @ResponseBody String os(HttpServletRequest request) {
+//		List<Os> result=osService.findAll();
+//		Gson gson=new Gson();
+//		return gson.toJson(result);
+//	}
 	
 }
