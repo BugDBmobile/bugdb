@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Os implements Serializable {
 	@Id
 	private Integer id;
-	private String descripiton;
+	private String description;
 	public Integer getId() {
 		return id;
 	}
@@ -16,10 +16,10 @@ public class Os implements Serializable {
 		this.id = id;
 	}
 	public String getDescription() {
-		return descripiton;
+		return description;
 	}
-	public void setDescription(String descripiton) {
-		this.descripiton = descripiton;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }
