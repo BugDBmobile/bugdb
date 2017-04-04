@@ -12,7 +12,7 @@ import BugDB.BugDBSystem.repository.UserRepository;
 
 
 @Service
-public class UserService {
+public class IUserService {
 	@Autowired
 	private UserRepository ur;
 	
