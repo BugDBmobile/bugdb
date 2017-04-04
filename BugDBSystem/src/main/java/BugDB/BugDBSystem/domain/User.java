@@ -1,17 +1,16 @@
 package BugDB.BugDBSystem.domain;
 
-import java.io.Serializable;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
 @Entity
-public class User implements Serializable {
-	@Id
+public class User {
+    @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotBlank
@@ -24,8 +23,24 @@ public class User implements Serializable {
 	@NotBlank
 	private String guid;
 	private String role;
-	
-	public Long getId() {
+
+    public User(String userName, String password, String email, String guid, String role) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.guid = guid;
+        this.role = role;
+    }
+
+    public String getGuid() {
+        return guid;
+    }
+
+    public void setGuid(String guid) {
+        this.guid = guid;
+    }
+
+    public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {

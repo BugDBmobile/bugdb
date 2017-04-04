@@ -19,16 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ElasticBugContorller {
 
     @Autowired
-    private IUserService userService;
-
-    @Autowired
     private IBugService bugService;
 
-//    @RequestMapping(value = "/{bugNo}", method = RequestMethod.GET)
-//    public EsBug bug(@PathVariable("bugNo") int bugNo) {
-//        EsBug esBug = bugService.findByBugNo(bugNo);
-//        return esBug;
-//    }
+
 
     @RequestMapping(value = "synchronizeDB", method = RequestMethod.GET)
     public String bug() {

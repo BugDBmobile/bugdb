@@ -1,32 +1,22 @@
 package BugDB.BugDBSystem.domain;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
-@Entity
 @Document(indexName = "user", type = "user", shards = 1, replicas = 0, refreshInterval = "-1")
 public class ElasticUser {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@NotBlank
 	private String userName;
-	@NotBlank
 	private String password;
-	@NotBlank
-	@Email
 	private String email;
-	@NotBlank
 	private String guid;
 	private String role;
 
-    public ElasticUser(String userName, String password, String email, String guid, String role) {
+	public ElasticUser() {
+	}
+
+	public ElasticUser(String userName, String password, String email, String guid, String role) {
         this.userName = userName;
         this.password = password;
         this.email = email;

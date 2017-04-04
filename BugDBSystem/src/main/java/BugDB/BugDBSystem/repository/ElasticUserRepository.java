@@ -1,11 +1,10 @@
 package BugDB.BugDBSystem.repository;
 
+import BugDB.BugDBSystem.domain.ElasticUser;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import BugDB.BugDBSystem.domain.User;
 
+public interface ElasticUserRepository extends ElasticsearchRepository<ElasticUser, Long> {
 
-public interface ElasticUserRepository extends ElasticsearchRepository<User, Long> {
-
-    User findByUserName(String name);
+    ElasticUser findByUserName(String name);
 }

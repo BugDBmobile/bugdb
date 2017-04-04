@@ -2,33 +2,25 @@ package BugDB.BugDBSystem.service.impl;
 
 import BugDB.BugDBSystem.domain.User;
 import BugDB.BugDBSystem.repository.UserRepository;
+import BugDB.BugDBSystem.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.util.List;
+@Service
+public class UserServiceImpl implements IUserService {
+
+    @Autowired
+    private UserRepository ur;
 
 
-public class UserServiceImpl {
+    @Override
+    public Iterable<User> findAll() {
+        return ur.findAll();
+    }
 
-	@Autowired
-	private UserRepository ur;
-	
-	@Transactional
-	public User save(User user){
-		return ur.save(user);
-	}
-	
-	public List<User> findAll(){
-		return (List<User>) ur.findAll();
-	}
-	
-	@Transactional
-	public void delete(User user){
-		this.ur.delete(user);
-	}
-
-	public User findByUserName(String name){
-		return ur.findByUserName(name);
-	}
+    @Override
+    public User findByUserName(String name) {
+        return ur.findByUserName(name);
+    }
 
 }

@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
 @Entity
 public class Bug implements Serializable {
 	@Id
@@ -19,7 +17,7 @@ public class Bug implements Serializable {
 	private Timestamp filed;
 	private Integer assigned;
 	private String customer;
-	private String butType;
+	private String bugType;
 	private Integer statusId;
 	private Integer fixedBy;
 	private String fixedVer;
@@ -59,12 +57,15 @@ public class Bug implements Serializable {
 	public void setCustomer(String customer) {
 		this.customer = customer;
 	}
-	public String getButType() {
-		return butType;
+
+	public String getBugType() {
+		return bugType;
 	}
-	public void setButType(String butType) {
-		this.butType = butType;
+
+	public void setBugType(String bugType) {
+		this.bugType = bugType;
 	}
+
 	public Integer getStatusId() {
 		return statusId;
 	}
