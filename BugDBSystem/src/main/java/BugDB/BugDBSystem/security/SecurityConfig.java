@@ -24,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 	protected static class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 		
-		@Autowired
-		private SecurityProperties security;
-
-		@Autowired
-		private UserDetailsService userDetailsService;
+//		@Autowired
+//		private SecurityProperties security;
+//
+//		@Autowired
+//		private UserDetailsService userDetailsService;
 
 
 		@Override
@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			/*auth.inMemoryAuthentication().withUser("luoxq").password("luoxq")
 					.roles("ADMIN", "USER");
 			*/
-			auth.userDetailsService(userDetailsService);
+		//	auth.userDetailsService(userDetailsService);
 		}
 
 	}
