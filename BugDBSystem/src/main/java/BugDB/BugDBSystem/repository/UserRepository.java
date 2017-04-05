@@ -1,10 +1,13 @@
 package BugDB.BugDBSystem.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+
 import BugDB.BugDBSystem.domain.User;
-import org.springframework.data.repository.PagingAndSortingRepository;
 
 
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
-
-    User findByUserName(String name);
+public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+	@Query("select p from User p where userName = ?")
+	public User findByUserName(String name);
 }

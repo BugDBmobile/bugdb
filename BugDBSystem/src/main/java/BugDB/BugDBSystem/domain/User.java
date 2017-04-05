@@ -24,13 +24,6 @@ public class User {
 	private String guid;
 	private String role;
 
-    public User(String userName, String password, String email, String guid, String role) {
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.guid = guid;
-        this.role = role;
-    }
 
     public String getGuid() {
         return guid;

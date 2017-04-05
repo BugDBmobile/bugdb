@@ -3,10 +3,12 @@ package BugDB.BugDBSystem.domain;
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 @Entity
 public class Updates implements java.io.Serializable {
 	@Id
+	@GeneratedValue
 	private Integer id;
 	private Timestamp time;
 	private Integer userId;
