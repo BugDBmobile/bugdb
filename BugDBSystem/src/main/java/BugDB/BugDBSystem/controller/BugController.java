@@ -87,12 +87,14 @@ public class BugController {
 		update.setTime(Timestamp.valueOf(LocalDateTime.now()));
 		
 		StringBuilder chg=new StringBuilder("");
-		if(bug.getStatusId()!=status){chg.append("(CHG:status-").append(utilservice.findStatusById(bug.getBugNo()).getDescription())
-			.append(" to ").append(utilservice.findStatusById(status).getDescription());}	
-		if(bug.getAssigned()!=assigned){chg.append("(CHG:assigned-").append(userservice.findById(bug.getAssigned()).getUserName())
-			.append(" to ").append(userservice.findById(assigned).getClass());}
+		if(bug.getStatusId()!=status){chg.append("CHG:status-").append(utilservice.findStatusById(bug.getBugNo()).getDescription())
+			.append(" to ").append(utilservice.findStatusById(status).getDescription()+";");}	
+		if(bug.getAssigned()!=assigned){chg.append("CHG:assigned-").append(userservice.findById(bug.getAssigned()).getUserName())
+			.append(" to ").append(userservice.findById(assigned).getUserName()+";");}
 		if(bug.getProductId()!=product){chg.append("CHG:product-").append(utilservice.findProductById(bug.getProductId()).getDescription())
-			.append(" to ").append(utilservice.findProductById(product).getDescription());}
+			.append(" to ").append(utilservice.findProductById(product).getDescription()+";");}
+		if(!bug.getSubject().equals(subject)){chg.append("CHG:subject-").append(bug.getSubject())
+			.append(" to ").append(subject+";");}
 		
 		update.setChg(chg.toString());
 		Updates result2=updateservice.save(update);

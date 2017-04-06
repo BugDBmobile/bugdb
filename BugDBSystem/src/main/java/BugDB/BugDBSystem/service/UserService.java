@@ -36,7 +36,7 @@ public class UserService {
 	}
 	
 	@Transactional
-	public User findById(int id){
+	public User findById(Integer id){
 		return ur.findById(id);
 	}
 

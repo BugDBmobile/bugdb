@@ -60,17 +60,9 @@ public class BugDBController {
 
     }
 
-    @RequestMapping("login")
-    public ModelAndView login() {
-        return new ModelAndView("login");
-    }
-
-//	@RequestMapping(value ="os", method = RequestMethod.GET)
-//	@Transactional(readOnly = true)
-//	public @ResponseBody String os(HttpServletRequest request) {
-//		List<Os> result=osService.findAll();
-//		Gson gson=new Gson();
-//		return gson.toJson(result);
-//	}
+//    @RequestMapping("login")
+//    public ModelAndView login() {
+//        return new ModelAndView("login");
+//    }
 
 }

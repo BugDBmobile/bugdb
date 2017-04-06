@@ -7,10 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import BugDB.BugDBSystem.domain.User;
 
 
-public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
 	@Query("select p from User p where userName = ?")
 	public User findByUserName(String name);
 	
 	@Query("select u from User u where id = ?")
-	public User findById(int id);
+	public User findById(Integer id);
 }
