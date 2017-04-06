@@ -1,8 +1,11 @@
 package BugDB.BugDBSystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -15,6 +18,7 @@ public class EsBug implements Serializable {
     @Id
     private Integer bugNo;
     private Integer filedBy;
+    @Field(format= DateFormat.date_hour_minute_second, pattern = "dd-MM-yyyy hh:mm:ss")
     private Timestamp filed;
     private Integer assigned;
     private String customer;
