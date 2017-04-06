@@ -14,11 +14,13 @@ import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 /**
  * Created by jingwei on 2017/4/4.
  */
 @Service
-public class BugService implements IBugService {
+public class BugServiceImpl implements IBugService {
     @Autowired
     private EsBugRepository esBugRepository;
     @Autowired
@@ -34,6 +36,7 @@ public class BugService implements IBugService {
     }
 
     @Override
+    @Transactional
     public EsBug save(EsBug esBug) {
         return esBugRepository.save(esBug);
     }
@@ -54,6 +57,7 @@ public class BugService implements IBugService {
     }
 
     @Override
+    @Transactional
     public Iterable<EsBug> deleteAll() {
         esBugRepository.deleteAll();
         return esBugRepository.findAll();

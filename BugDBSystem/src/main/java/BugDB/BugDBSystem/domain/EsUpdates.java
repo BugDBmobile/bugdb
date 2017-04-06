@@ -1,7 +1,10 @@
 package BugDB.BugDBSystem.domain;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -13,11 +16,18 @@ import java.sql.Timestamp;
 public class EsUpdates implements Serializable {
     @Id
     private Integer id;
+    @Field(format= DateFormat.date_hour_minute_second, pattern = "dd-MM-yyyy hh:mm:ss")
     private Timestamp time;
     private Integer userId;
     private Integer bugId;
     private String comments;
     private String chg;
+
+    public EsUpdates() {
+    }
+    public EsUpdates(Updates updates){
+        BeanUtils.copyProperties(updates, this);
+    }
     public Integer getId() {
         return id;
     }

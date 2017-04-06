@@ -18,7 +18,7 @@ public class IteratorUtils {
         return copy;
     }
 
-    public static <T, S> List<T> toVOList(Iterable<S> iterable, Class<T> ct) {
+    public static <T, S> List<T> toList(Iterable<S> iterable, Class<T> ct) {
 
         List<T> copy = new ArrayList<T>();
         Iterator<S> iterator = iterable.iterator();
@@ -33,6 +33,21 @@ public class IteratorUtils {
 
             }
 
+        }
+        return copy;
+    }
+
+    public static <T,S> List<T> toList(List<S> list, Class<T> ct) {
+
+        List<T> copy = new ArrayList<T>();
+        for (S s : list) {
+            try {
+                T t = ct.newInstance();
+                BeanUtils.copyProperties(s, t);
+                copy.add(t);
+            } catch (Exception e) {
+
+            }
         }
         return copy;
     }

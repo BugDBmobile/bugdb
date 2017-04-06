@@ -25,10 +25,7 @@ public class UserController {
 	@RequestMapping(value ="login",params = {"userName","password"}, method = RequestMethod.GET)
 	@Transactional(readOnly = true)
 	public @ResponseBody String user(HttpServletRequest request,@RequestParam String userName, @RequestParam String password) {		
-//		SecurityContextImpl securityContextImpl = (SecurityContextImpl) request
-//				 .getSession().getAttribute("SPRING_SECURITY_CONTEXT");
-//				// 登录名
-//		System.out.println("Username:"+ securityContextImpl.getAuthentication().getName());
+
 		User user = userService.findByUserName(userName);
 		Gson gson = new Gson();	
 		if(user!=null&&password.equals(user.getPassword())){

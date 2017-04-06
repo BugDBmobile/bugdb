@@ -28,4 +28,8 @@ public class UpdatesService {
 		return ur.findByBugId(bugId);
 	}
 
+	public List<Updates> findAll(){
+		return ur.findAll();
+	}
+
 }
